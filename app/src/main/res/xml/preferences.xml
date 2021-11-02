@@ -1,0 +1,36 @@
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <PreferenceCategory
+        android:title="@string/config">
+
+        <EditTextPreference
+            android:dialogTitle="@string/nota_minima"
+            android:inputType="number"
+            android:key="@string/nota_minima"
+            android:title="Nota minima"
+            android:defaultValue="10"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            android:key="nota maxima"
+            android:title="@string/nota_maxima"
+            app:useSimpleSummaryProvider="true"
+            android:dialogTitle="@string/nota_maxima"
+            android:defaultValue="70"
+            android:inputType="number"/>
+
+        <EditTextPreference
+        android:key="nota aprovacion"
+        android:title="@string/nota_aprovacion"
+        app:useSimpleSummaryProvider="true"
+        android:dialogTitle="@string/nota_aprovacion"
+        android:defaultValue="40"
+        android:inputType="number"/>
+    </PreferenceCategory>
+
+
+</androidx.preference.PreferenceScreen>
