@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grades</string>
+    <string name="porcentaje">Percentage</string>
+    <string name="nota">Grade</string>
+    <string name="limpiar">Clean</string>
+    <string name="calcular">Calculate</string>
+    <string name="nota_maxima">Max Grade</string>
+    <string name="nota_minima">Min Grade</string>
+    <string name="nota_aprovacion">Aprovation Grade</string>
+    <string name="config">Settings</string>
+    <string name="nota_numero">Grade n: </string>
+    <string name="msj_error_largo_notas">Length can not be below 2</string>
+    <string name="msj_error_porcentaje_part_1">The amount of the percentages entered is: </string>
+    <string name="msj_error_porcentaje_part_2">% has to be 100%</string>
+    <string name="msj_error_nota_fuera_rango">Enter grade in the set range</string>
+    <string name="msj_error_rango_porcentaje">Enter percentage in a range of 0 to 100</string>
+    <string name="msj_error_datos_incorrectos">Error, enter again: data incorrect or incomplete </string>
+</resources>

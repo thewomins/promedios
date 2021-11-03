@@ -1,30 +1,41 @@
-<resources>
-    <string name="app_name">Promedios</string>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:locale="en">
+    <string name="app_name">Grades</string>
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="messages_header" translatable="false">Messages</string>
+    <string name="sync_header" translatable="false">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
+    <string name="signature_title" translatable="false">Your signature</string>
+    <string name="reply_title" translatable="false">Default reply action</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="attachment_title" translatable="false">Download incoming attachments</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
     </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
+    <string name="title_activity_settings" translatable="false">SettingsActivity</string>
 
     <!-- Card notes Strings -->
-    <string name="porcentaje">Porcentaje</string>
-    <string name="nota">Nota</string>
-    <string name="limpiar">Limpiar</string>
-    <string name="calcular">Calcular</string>
-    <string name="nota_maxima">Nota maxima</string>
-    <string name="nota_minima">Nota minima</string>
-    <string name="nota_aprovacion">Nota aprobación</string>
-    <string name="config">Configuración</string>
+    <string name="porcentaje">Percentage</string>
+    <string name="nota">Grade</string>
+    <string name="limpiar">Clean</string>
+    <string name="calcular">Calculate</string>
+    <string name="nota_maxima">Max Grade</string>
+    <string name="nota_minima">Min Grade</string>
+    <string name="nota_aprovacion">Aprovation Grade</string>
+    <string name="config">Settings</string>
 
+    <!-- Main activity Strings -->
+    <string name="nota_numero">Grade n: </string>
+
+    <!-- Mensajes error Strings -->
+    <string name="msj_error_largo_notas">Length can not be below 2</string>
+    <string name="msj_error_porcentaje_part_1">The amount of the percentages entered is: </string>
+    <string name="msj_error_porcentaje_part_2">% has to be 100%</string>
+    <string name="msj_error_nota_fuera_rango">Enter grade in the set range</string>
+    <string name="msj_error_rango_porcentaje">Enter percentage in a range of 0 to 100</string>
+    <string name="msj_error_datos_incorrectos">Error, enter again: data incorrect or incomplete </string>
 
 </resources>

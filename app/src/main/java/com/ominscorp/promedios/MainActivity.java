@@ -87,20 +87,20 @@ public class MainActivity extends AppCompatActivity {
         }
         fragment.setId(hint);
         EditText edittext = fragment.findViewById(R.id.card_text);
-        edittext.setHint("nota n: "+ hint);
+        edittext.setHint(getString(R.string.nota_numero)+hint);
         InputFilter[] fArray = new InputFilter[1];
         fArray[0] = new InputFilter.LengthFilter(maxLength);
         edittext.setFilters(fArray);
         layout.addView(fragment);
         hint++;
-        String msj="creado fragmento id: "+fragment.getId()+" texto: "+edittext.getText().toString();
+        //String msj="creado fragmento id: "+fragment.getId()+" texto: "+edittext.getText().toString();
     }
 
     public void menos_notas(View view) {
         LinearLayout layout = (LinearLayout) findViewById(R.id.scroll_notas);
         int largo=layout.getChildCount();
         if(largo<=2){
-            String msj="Largo no puede ser menor a 2";
+            String msj=getResources().getString(R.string.msj_error_largo_notas);
             Toast toast = Toast.makeText(this, msj, Toast.LENGTH_SHORT);
             toast.show();
         }
@@ -125,12 +125,12 @@ public class MainActivity extends AppCompatActivity {
         float nota_aprovacion = Float.parseFloat(sharedPreferences.getString("nota aprovacion", "40"));
         for(int i =1; i<=cantidad; i++){
             LinearLayout layout1 = (LinearLayout) layout.findViewById(i);
-            System.out.println(layout1.getId());
+            //System.out.println(layout1.getId());
             EditText nota_txt = (EditText) layout1.findViewById(R.id.card_text);
             EditText porcentaje_txt = (EditText) layout1.findViewById(R.id.porcentaje_txt);
             String validar = validar_datos(nota_txt.getText().toString(),porcentaje_txt.getText().toString());
             if(!validar.equals("1")){
-                System.out.println(validar);
+                //System.out.println(validar);
                 Toast toast = Toast.makeText(this, validar, Toast.LENGTH_SHORT);
                 toast.show();
                 return;
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if(suma_porcentajes!=100){
-            msj = ("La suma de porcentajes ingresado es: "+suma_porcentajes+"% tiene que ser 100%");
+            msj = (getResources().getString(R.string.msj_error_porcentaje_part_1)+suma_porcentajes+getResources().getString(R.string.msj_error_porcentaje_part_2));
             Toast toast = Toast.makeText(this, msj, Toast.LENGTH_SHORT);
             toast.show();
         }else{
@@ -157,31 +157,31 @@ public class MainActivity extends AppCompatActivity {
             else{
                 nota_label.setTextColor(Color.GREEN);
             }
-            System.out.println(promedio);
+            //System.out.println(promedio);
         }
     }
 
     public String validar_datos(String nota_txt, String porcentaje_txt){
         String msj;
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        System.out.println("nota max: "+sharedPreferences.getString("nota maxima","70"));
+        //System.out.println("nota max: "+sharedPreferences.getString("nota maxima","70"));
         float nota_max = Float.parseFloat(sharedPreferences.getString("nota maxima","70"));
         float nota_min = Float.parseFloat(sharedPreferences.getString("nota minima", "10"));
-        System.out.println("nota max: "+nota_max+" nota min: "+nota_min);
+        //System.out.println("nota max: "+nota_max+" nota min: "+nota_min);
         try {
             float nota = Float.parseFloat(nota_txt);
             float porcentaje = Float.parseFloat(porcentaje_txt);
             if(nota>nota_max || nota<nota_min){//hacer archivo config para nota maxima y minima
-                msj="Ingrese nota en el rango establecido";
+                msj=getResources().getString(R.string.msj_error_nota_fuera_rango);
             }else if(porcentaje>100 || porcentaje<0){
-                msj="ingrese porcentaje en el rango de 0 - 100";
+                msj=getResources().getString(R.string.msj_error_rango_porcentaje);
             }else{
                 msj= "1";
             }
             return msj;
         }
         catch (Exception e){
-            msj="Ingrese nuevamente error: datos ingresados incorrectos o incompletos";
+            msj=getResources().getString(R.string.msj_error_datos_incorrectos);
             return msj;
         }
     }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Promedios</string>
+
+    <!-- Card notes Strings -->
+    <string name="porcentaje">Porcentaje</string>
+    <string name="nota">Nota</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="calcular">Calcular</string>
+    <string name="nota_maxima">Nota máxima</string>
+    <string name="nota_minima">Nota mínima</string>
+    <string name="nota_aprovacion">Nota aprobación</string>
+    <string name="config">Configuración</string>
+
+    <!-- Main activity Strings -->
+    <string name="nota_numero">nota n: </string>
+
+    <!-- Mensajes error Strings -->
+    <string name="msj_error_largo_notas">Largo no puede ser menor a 2</string>
+    <string name="msj_error_porcentaje_part_1">La suma de porcentajes ingresado es: </string>
+    <string name="msj_error_porcentaje_part_2">% tiene que ser 100%</string>
+    <string name="msj_error_nota_fuera_rango">Ingrese nota en el rango establecido</string>
+    <string name="msj_error_rango_porcentaje">ingrese porcentaje en el rango de 0 – 100</string>
+    <string name="msj_error_datos_incorrectos">Ingrese nuevamente error: datos ingresados incorrectos o incompletos</string>
+
+
+</resources>
