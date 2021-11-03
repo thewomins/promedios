@@ -9,10 +9,10 @@
 
         <EditTextPreference
             android:dialogTitle="@string/nota_minima"
-            android:inputType="number"
-            android:key="@string/nota_minima"
-            android:title="Nota minima"
+            android:key="nota minima"
+            android:title="@string/nota_minima"
             android:defaultValue="10"
+            android:inputType="number"
             app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference
