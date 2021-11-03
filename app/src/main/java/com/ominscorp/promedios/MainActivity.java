@@ -1,5 +1,6 @@
 package com.ominscorp.promedios;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
@@ -26,9 +27,6 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    private AdView mAdView;
-    private AdView mAdView1;
-    private FrameLayout adContainerView;
     private int hint = 1;
 
     @Override
@@ -38,22 +36,22 @@ public class MainActivity extends AppCompatActivity {
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
             }
         });
 
-        LinearLayout layout = (LinearLayout) findViewById(R.id.scroll_notas);
+        LinearLayout layout = findViewById(R.id.scroll_notas);
         crea_fragment(layout);
         crea_fragment(layout);
 
-        adContainerView = findViewById(R.id.adView);
+        FrameLayout adContainerView = findViewById(R.id.adView);
         // Step 1 - Create an AdView and set the ad unit ID on it.
-        mAdView = new AdView(this);
+        AdView mAdView = new AdView(this);
         mAdView.setAdUnitId("ca-app-pub-4235180355584066/5255553965");
         adContainerView.addView(mAdView);
         loadBanner(mAdView);
 
-        mAdView1 = findViewById(R.id.adView1);
+        AdView mAdView1 = findViewById(R.id.adView1);
         AdRequest adRequest1 = new AdRequest.Builder().build();
         mAdView1.loadAd(adRequest1);
 
@@ -97,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void menos_notas(View view) {
-        LinearLayout layout = (LinearLayout) findViewById(R.id.scroll_notas);
+        LinearLayout layout = findViewById(R.id.scroll_notas);
         int largo=layout.getChildCount();
         if(largo<=2){
             String msj=getResources().getString(R.string.msj_error_largo_notas);
@@ -111,12 +109,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mas_notas(View view) {
-        LinearLayout layout = (LinearLayout) findViewById(R.id.scroll_notas);
+        LinearLayout layout = findViewById(R.id.scroll_notas);
         crea_fragment(layout);
     }
 
     public void calcular(View view) {
-        LinearLayout layout = (LinearLayout) findViewById(R.id.scroll_notas);
+        LinearLayout layout = findViewById(R.id.scroll_notas);
         int cantidad=layout.getChildCount();
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         float promedio=0;
@@ -124,10 +122,10 @@ public class MainActivity extends AppCompatActivity {
         String msj;
         float nota_aprovacion = Float.parseFloat(sharedPreferences.getString("nota aprovacion", "40"));
         for(int i =1; i<=cantidad; i++){
-            LinearLayout layout1 = (LinearLayout) layout.findViewById(i);
+            LinearLayout layout1 = layout.findViewById(i);
             //System.out.println(layout1.getId());
-            EditText nota_txt = (EditText) layout1.findViewById(R.id.card_text);
-            EditText porcentaje_txt = (EditText) layout1.findViewById(R.id.porcentaje_txt);
+            EditText nota_txt = layout1.findViewById(R.id.card_text);
+            EditText porcentaje_txt = layout1.findViewById(R.id.porcentaje_txt);
             String validar = validar_datos(nota_txt.getText().toString(),porcentaje_txt.getText().toString());
             if(!validar.equals("1")){
                 //System.out.println(validar);
@@ -192,12 +190,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void limpiar(View view) {
-        LinearLayout layout = (LinearLayout) findViewById(R.id.scroll_notas);
+        LinearLayout layout = findViewById(R.id.scroll_notas);
         int cantidad=layout.getChildCount();
         for(int i =1; i<=cantidad; i++) {
-            LinearLayout layout1 = (LinearLayout) layout.findViewById(i);
-            EditText nota_txt = (EditText) layout1.findViewById(R.id.card_text);
-            EditText porcentaje_txt = (EditText) layout1.findViewById(R.id.porcentaje_txt);
+            LinearLayout layout1 = layout.findViewById(i);
+            EditText nota_txt = layout1.findViewById(R.id.card_text);
+            EditText porcentaje_txt = layout1.findViewById(R.id.porcentaje_txt);
             nota_txt.setText("");
             porcentaje_txt.setText("");
         }
