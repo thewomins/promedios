@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
-
     <PreferenceCategory
         android:title="@string/config">
 
@@ -31,6 +30,8 @@
         android:defaultValue="40"
         android:inputType="number"/>
     </PreferenceCategory>
+
+
 
 
 </androidx.preference.PreferenceScreen>
