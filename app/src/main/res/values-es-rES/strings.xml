@@ -13,7 +13,7 @@
     <string name="config">Configuración</string>
 
     <!-- Main activity Strings -->
-    <string name="nota_numero">nota n: </string>
+    <string name="nota_numero">Nota N: </string>
 
     <!-- Mensajes error Strings -->
     <string name="msj_error_largo_notas">Largo no puede ser menor a 2</string>

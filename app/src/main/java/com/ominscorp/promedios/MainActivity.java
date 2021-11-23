@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         }
         fragment.setId(hint);
         EditText edittext = fragment.findViewById(R.id.card_text);
-        edittext.setHint(getString(R.string.nota_numero)+hint);
+        edittext.setHint(getString(R.string.nota_numero)+" "+hint);
         InputFilter[] fArray = new InputFilter[1];
         fArray[0] = new InputFilter.LengthFilter(maxLength);
         edittext.setFilters(fArray);
