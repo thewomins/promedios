@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
-import com.google.android.gms.ads.AdRequest;
+/*import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-
+*/
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+        /*MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
             }
-        });
+        });*/
 
         LinearLayout layout = findViewById(R.id.scroll_notas);
         crea_fragment(layout);
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         FrameLayout adContainerView = findViewById(R.id.adView);
         // Step 1 - Create an AdView and set the ad unit ID on it.
-        AdView mAdView = new AdView(this);
+        /*AdView mAdView = new AdView(this);
         mAdView.setAdUnitId("ca-app-pub-4235180355584066/5255553965");
         adContainerView.addView(mAdView);
         loadBanner(mAdView);
@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         AdView mAdView1 = findViewById(R.id.adView1);
         AdRequest adRequest1 = new AdRequest.Builder().build();
         mAdView1.loadAd(adRequest1);
-
+        */
     }
 
-    private void loadBanner(AdView mAdView) {
+    /*private void loadBanner(AdView mAdView) {
         AdRequest adRequest = new AdRequest.Builder().build();
         AdSize adSize = getAdSize();
         mAdView.setAdSize(adSize);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         int adWidth = (int) (widthPixels / density);
 
         return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
-    }
+    }*/
 
     public void crea_fragment(LinearLayout layout){
         LinearLayout fragment = (LinearLayout) this.getLayoutInflater().inflate(R.layout.card_notas, null);
@@ -199,5 +199,7 @@ public class MainActivity extends AppCompatActivity {
             nota_txt.setText("");
             porcentaje_txt.setText("");
         }
+        TextView nota_label = findViewById(R.id.texto_nota);
+        nota_label.setText("");
     }
 }
