@@ -116,16 +116,16 @@
 
         </androidx.core.widget.NestedScrollView>
 
-<!--        <com.google.android.gms.ads.AdView
+        <com.google.android.gms.ads.AdView
             android:id="@+id/adView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/botones"
             android:layout_centerHorizontal="true"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-4235180355584066/2368299073">
+            ads:adUnitId="ca-app-pub-4235180355584066/2828698574">
             </com.google.android.gms.ads.AdView>
--->
+
 
         <LinearLayout
             android:id="@+id/botones"
